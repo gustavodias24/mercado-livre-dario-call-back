@@ -31,7 +31,7 @@ def index():
 
     response.update(payload)
 
-    return jsonify(response.json())
+    return jsonify(response)
 
 
 if __name__ == "__main__":

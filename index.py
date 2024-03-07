@@ -12,7 +12,7 @@ def index():
     url = 'https://api.mercadolibre.com/oauth/token'
 
     length = 10
-    
+
     payload = {
         'grant_type': 'authorization_code',
         'client_id': '200629904312027',
@@ -27,7 +27,9 @@ def index():
         'content-type': 'application/x-www-form-urlencoded'
     }
 
-    response = requests.post(url, data=payload, headers=headers)
+    response = requests.post(url, data=payload, headers=headers).json()
+
+    response.update({"body": payload})
 
     return jsonify(response.json())
 

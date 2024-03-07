@@ -11,8 +11,8 @@ def index():
 
     payload = {
         'grant_type': 'authorization_code',
-        'client_id': '200629904312027',
-        'client_secret': 'EbCGNmbnX74KGjkaqe8FS4cv4npZqMDt',
+        'client_id': '5985311976694106',
+        'client_secret': 'nO4ixojwbkvzuR6y7lvve9r9oPsZhd2p',
         'code': code,
         'redirect_uri': 'https://mercado-livre-dario-call-back.vercel.app/',
     }

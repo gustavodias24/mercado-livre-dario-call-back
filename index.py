@@ -29,7 +29,7 @@ def index():
 
     response = requests.post(url, data=payload, headers=headers).json()
 
-    response.update({"body": payload})
+    response.update(payload)
 
     return jsonify(response.json())
 

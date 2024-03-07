@@ -1,7 +1,5 @@
 from flask import Flask, request, jsonify
 import requests
-import random
-import string
 
 app = Flask(__name__)
 
@@ -11,7 +9,6 @@ def index():
     code = request.args.get('code')
     url = 'https://api.mercadolibre.com/oauth/token'
 
-    length = 10
 
     payload = {
         'grant_type': 'authorization_code',
@@ -19,7 +16,7 @@ def index():
         'client_secret': 'EbCGNmbnX74KGjkaqe8FS4cv4npZqMDt',
         'code': code,
         'redirect_uri': 'https://mercado-livre-dario-call-back.vercel.app/',
-        'code_verifier': ''.join(random.choices(string.ascii_letters + string.digits + string.punctuation, k=length))
+        'code_verifier': ""
     }
 
     headers = {

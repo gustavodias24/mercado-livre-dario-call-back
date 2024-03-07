@@ -9,14 +9,13 @@ def index():
     code = request.args.get('code')
     url = 'https://api.mercadolibre.com/oauth/token'
 
-
     payload = {
         'grant_type': 'authorization_code',
         'client_id': '200629904312027',
         'client_secret': 'EbCGNmbnX74KGjkaqe8FS4cv4npZqMDt',
         'code': code,
         'redirect_uri': 'https://mercado-livre-dario-call-back.vercel.app/',
-        'code_verifier': ""
+        'code_verifier': "AAAAAABGGGGGGGHHYUYY"
     }
 
     headers = {
@@ -26,7 +25,7 @@ def index():
 
     response = requests.post(url, data=payload, headers=headers).json()
 
-    response.update(payload)
+    response.update({"body": payload})
 
     return jsonify(response)
 
